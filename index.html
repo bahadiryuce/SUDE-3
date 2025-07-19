@@ -29,10 +29,14 @@
 
     .photo-gallery {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-around;
       margin-top: 30px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .photo-gallery img {
@@ -109,12 +113,16 @@
     <p>Umarım hayatta hep en güzel şeyler senin olur, istediğin her şey gerçekleşir.Nice benli ve didişdiğimiz mutlu senelere.Seni çok seviyorum uyuzz 🤍</p>
   </div>
 
-  <!-- 🖼️ Fotoğraf Galerisi (2 sağ, 2 sol olacak şekilde) -->
+  <!-- 🖼️ Fotoğraf Galerisi (2 sağda, 2 solda alt alta) -->
   <div class="photo-gallery">
-    <img src="https://placekitten.com/400/300" alt="Sude ve Dostum 1">
-    <img src="https://placekitten.com/401/300" alt="Sude ve Dostum 2">
-    <img src="https://placekitten.com/402/300" alt="Sude ve Dostum 3">
-    <img src="https://placekitten.com/403/300" alt="Sude ve Dostum 4">
+    <div class="column">
+      <img src="https://placekitten.com/400/300" alt="Sude ve Dostum 1">
+      <img src="https://placekitten.com/401/300" alt="Sude ve Dostum 2">
+    </div>
+    <div class="column">
+      <img src="https://placekitten.com/402/300" alt="Sude ve Dostum 3">
+      <img src="https://placekitten.com/403/300" alt="Sude ve Dostum 4">
+    </div>
   </div>
 
   <div class="button-area">
@@ -127,7 +135,7 @@
 
   <canvas class="confetti" id="confettiCanvas"></canvas>
 
-   <audio id="bg-music" loop>
+  <audio id="bg-music" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
 
@@ -137,7 +145,7 @@
     const finalMessage = document.getElementById('finalMessage');
     const canvas = document.getElementById('confettiCanvas');
     const ctx = canvas.getContext('2d');
-    const music = document.getElementById('bgMusic');
+    const music = document.getElementById('bg-music');
     const musicControl = document.getElementById('musicControl');
 
     let noClickCount = 0;
