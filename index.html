@@ -11,6 +11,7 @@
       text-align: center;
       padding: 30px;
       color: #444;
+      box-sizing: border-box;
     }
 
     h1 {
@@ -18,31 +19,37 @@
       color: #d63384;
     }
 
-    .message {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #fff0f6;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .photo-gallery {
+    .container {
       display: flex;
-      justify-content: space-around;
-      margin-top: 30px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .column {
+    .photo-column {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
 
-    .photo-gallery img {
+    .photo-column img {
       width: 200px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .message {
+      flex: 1;
+      max-width: 600px;
+      background: #fff0f6;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .button-area {
@@ -97,6 +104,35 @@
       border: none;
       cursor: pointer;
     }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .photo-column {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .photo-column img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .message {
+        max-width: 90%;
+      }
+
+      #musicControl {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 999;
+      }
+    }
   </style>
 </head>
 <body>
@@ -104,24 +140,27 @@
 
   <h1>🎂İYİKİ DOĞDUNNN🎉</h1>
 
-  <div class="message">
-    <p>Sude öncelikle gerçekten doğum gününü kutlayamadığım için çok çok özür dilerim kendimi çok kötü hissediyorum.</p>
-    <p>Büyük bir salaklık yapıp kutlamayı unutmuş olabilirim </p> 
-    <p>Ama kutlamayı unutmuş olmam, sana az değer verdiğimden ya da seni unuttuğumdan asla değil</p>
-    <p>Benim için her zaman çok çoook değerlisin </p> 
-    <p>Doğum günün kutlu olsun, iyi ki doğdunn bücürr 💖</p>
-    <p>Umarım hayatta hep en güzel şeyler senin olur, istediğin her şey gerçekleşir.Nice benli ve didişdiğimiz mutlu senelere.Seni çok seviyorum uyuzz 🤍</p>
-  </div>
-
-  <!-- 🖼️ Fotoğraf Galerisi (2 sağda, 2 solda alt alta) -->
-  <div class="photo-gallery">
-    <div class="column">
-      <img src="sude1.png"  alt="Sude ve Dostum 1">
-      <img src="sude2.png"  alt="Sude ve Dostum 2">
+  <div class="container">
+    <!-- Sol fotoğraflar -->
+    <div class="photo-column">
+      <img src="https://placekitten.com/400/300" alt="Sude ve Dostum 1">
+      <img src="https://placekitten.com/401/300" alt="Sude ve Dostum 2">
     </div>
-    <div class="column">
-      <img src="sude3.png"  alt="Sude ve Dostum 3">
-      <img src="sude4.png"  alt="Sude ve Dostum 4">
+
+    <!-- Mesaj -->
+    <div class="message">
+      <p>Sude öncelikle gerçekten doğum gününü kutlayamadığım için çok çok özür dilerim kendimi çok kötü hissediyorum.</p>
+      <p>Büyük bir salaklık yapıp kutlamayı unutmuş olabilirim </p> 
+      <p>Ama kutlamayı unutmuş olmam, sana az değer verdiğimden ya da seni unuttuğumdan asla değil</p>
+      <p>Benim için her zaman çok çoook değerlisin </p> 
+      <p>Doğum günün kutlu olsun, iyi ki doğdunn bücürr 💖</p>
+      <p>Umarım hayatta hep en güzel şeyler senin olur, istediğin her şey gerçekleşir.Nice benli ve didişdiğimiz mutlu senelere.Seni çok seviyorum uyuzz 🤍</p>
+    </div>
+
+    <!-- Sağ fotoğraflar -->
+    <div class="photo-column">
+      <img src="https://placekitten.com/402/300" alt="Sude ve Dostum 3">
+      <img src="https://placekitten.com/403/300" alt="Sude ve Dostum 4">
     </div>
   </div>
 
