@@ -5,18 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>İYİ Kİ DOĞDUNNN </title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: #fdf0f5;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #e0f2f1; /* yeşil tonlu arka plan */
+      font-family: 'Arial', sans-serif;
       text-align: center;
       padding: 30px;
-      color: #444;
-      box-sizing: border-box;
+      color: #333;
+      margin: 0;
     }
 
     h1 {
       font-size: 2.5em;
-      color: #d63384;
+      color: #0d47a1; /* lacivert */
     }
 
     .container {
@@ -27,6 +31,7 @@
       gap: 20px;
       max-width: 1200px;
       margin: 0 auto;
+      flex-direction: row;
     }
 
     .photo-column {
@@ -46,7 +51,7 @@
     .message {
       flex: 1;
       max-width: 600px;
-      background: #fff0f6;
+      background: #e8f5e9; /* açık yeşil */
       padding: 20px;
       border-radius: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -66,13 +71,13 @@
     }
 
     #yesBtn {
-      background: #ff66a3;
+      background: #1e88e5; /* lacivert tonlu mavi */
       color: white;
     }
 
     #noBtn {
-      background: #ffd6e7;
-      color: #d63384;
+      background: #b2dfdb; /* açık yeşil */
+      color: #00695c;
     }
 
     .confetti {
@@ -89,20 +94,21 @@
       font-size: 2em;
       margin-top: 20px;
       display: none;
-      color: #d63384;
+      color: #0d47a1;
     }
 
     #musicControl {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      position: fixed;
+      top: 10px;
+      right: 10px;
       padding: 8px 16px;
       font-size: 1em;
       border-radius: 20px;
-      background-color: #ffccdd;
-      color: #d63384;
+      background-color: #c8e6c9; /* yeşilimsi */
+      color: #2e7d32;
       border: none;
       cursor: pointer;
+      z-index: 999;
     }
 
     @media (max-width: 768px) {
@@ -125,13 +131,6 @@
       .message {
         max-width: 90%;
       }
-
-      #musicControl {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 999;
-      }
     }
   </style>
 </head>
@@ -141,23 +140,20 @@
   <h1>🎂İYİ Kİ DOĞDUNNN🎉</h1>
 
   <div class="container">
-    <!-- Sol fotoğraflar -->
     <div class="photo-column">
       <img src="sude1.png" alt="Sude ve Dostum 1">
       <img src="sude2.png" alt="Sude ve Dostum 2">
     </div>
 
-    <!-- Mesaj -->
     <div class="message">
       <p>Sude öncelikle gerçekten doğum gününü kutlayamadığım için çok çok özür dilerim kendimi çok kötü hissediyorum.</p>
-      <p>Büyük bir salaklık yapıp kutlamayı unutmuş olabilirim </p> 
+      <p>Büyük bir salaklık yapıp kutlamayı unutmuş olabilirim </p>   
       <p>Ama kutlamayı unutmuş olmam, sana az değer verdiğimden ya da seni unuttuğumdan asla değil</p>
-      <p>Benim için her zaman çok çoook değerlisin </p> 
+      <p>Benim için her zaman çok çoook değerlisin </p>   
       <p>Doğum günün kutlu olsun, iyi ki doğdunn bücürr 💖</p>
-      <p>Umarım hayatta hep en güzel şeyler senin olur, istediğin her şey gerçekleşir.Nice benli ve didişdiğimiz mutlu senelere.Seni çok seviyorum uyuzz 🤍</p>
+      <p>Umarım hayatta hep en güzel şeyler senin olur, istediğin her şey gerçekleşir. Nice benli ve didişdiğimiz mutlu senelere. Seni çok seviyorum uyuzz ⭐️</p>
     </div>
 
-    <!-- Sağ fotoğraflar -->
     <div class="photo-column">
       <img src="sude3.png" alt="Sude ve Dostum 3">
       <img src="sude4.png" alt="Sude ve Dostum 4">
@@ -212,7 +208,6 @@
       }
     });
 
-    // Konfeti animasyonu
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     const pieces = [];
